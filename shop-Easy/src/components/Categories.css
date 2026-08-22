@@ -1,0 +1,16 @@
+.categories-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: white;
+}
+.categories-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
