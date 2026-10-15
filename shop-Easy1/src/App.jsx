@@ -3,6 +3,8 @@ import {createContext} from 'react'
 import MiddleCom from './components/MiddleCom'
 import { useState } from 'react';
 import UseRedEX from './components/UseRedEx';
+import ProductList from './components/ProductList';
+import Cart from './components/Cart';
 //1 . local scope 
 function Counter(){
    const [count,setCount] = useState(0);
@@ -53,6 +55,8 @@ function App() {
   }
   return (
     <>
+    <ProductList />
+    <Cart />
      <h1>Lifting Up State Example</h1>
       <h2>Count : {count}</h2>
      
