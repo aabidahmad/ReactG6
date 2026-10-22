@@ -12,7 +12,8 @@ function Cart(){
     const totalItems = items.reduce(
         (total,item)=>total + item.quantity,0);
     const totalPrice = items.reduce(
-        (total,item)=>total+total.price *item.quantity,0)
+    (total, item) => total + item.price * item.quantity, 0);
+        console.log(totalPrice);
         return (
             <>
               <section className="cart-section">
@@ -38,17 +39,20 @@ function Cart(){
                                            </button>
                                            <button onClick=
                                            {()=>dispatch(increaseQuantity(item.id))} >+</button>
-
+                                            <button onClick={()=>dispatch(removeFromCart(item.id))}>
+                                                Remove
+                                            </button>
                                         </div>
                                     </div>
-
-
                                 </div>
                             ))
-
                         }
-                        
-                        
+                         <hr/>
+                         <h3>total units :{totalItems}</h3>
+                         <h3>total Price :
+                             {totalPrice.toLocaleString("en-IN")}</h3> 
+                         <button onClick={()=>dispatch(clearCart())}>
+                            Clear Cart</button>    
                         </>
                     )
                 }

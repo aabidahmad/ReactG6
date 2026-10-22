@@ -39,23 +39,25 @@ const cartReducer =(state= initialState,action)=>{
             }
         }
         case INCREASE_QUANTITY:{
+            console.log("*********")
             return {
-                ...state,
-                items:state.items.map((item)=>
-                item.id === action.payload)? 
-                { ...item, quantity: item.quantity + 1 }
-            : item
+                ...state,           
+                items: state.items.map((item) =>
+                item.id === action.payload ? 
+                {...item, quantity: item.quantity + 1 }
+            : item),
             }
         }
         case DECREASE_QUANTITY:{
             return {
                 ...state,
                 items:state.items.map((item)=>
-                item.id === payload)?{...item,
-                    quantity:Math.max(1,item.quantity-1)}
-                    :item
-            }
-        }
+                item.id === action.payload?{...item,
+                    quantity:Math.max(1,item.quantity-1),
+                }
+                    :item)
+           };
+    }
         case CLEAR_CART:{
             return {
                 ...state,
